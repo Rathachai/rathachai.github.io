@@ -9,7 +9,7 @@
 
 ---
 
-![RC](./imgs/rc-001.png)
+![RC](./images/rc-001.png)
 
 
 ## Introduction
