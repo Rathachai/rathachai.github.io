@@ -1,7 +1,3 @@
-
-| 𑁔 | [About Me](index.md) | [Publications](publications.md) |
-|--|--|--|
-
 ### チャウウタイ  ラッタチャイ 
 
 > 「 サービスとしての知識 」— *Knowledge as a Service*
@@ -11,12 +7,18 @@
 ![LAB, SAIG](https://img.shields.io/badge/LAB-SAIG-blue)
 ![Bangkok, Thailand](https://img.shields.io/badge/Bangkok-Thailand-red)
 
-
+| 𑁔 | [About Me](index.md) | [Publications](publications.md) |
+|--|--|--|
 ---
 
-## About
+## Short Intr
 
 Associate Professor at the Department of Computer Engineering, King Mongkut's Institute of Technology Ladkrabang (KMITL), Bangkok, Thailand. Research focuses on data analytics, semantic web, linked open data, and the intersection of knowledge management with modern web technologies.
+
+---
+## Biography
+
+Rathachai Chawuthai received the B.Eng. degree in computer engineering from the King Mongkut’s Institute of Technology Ladkrabang, Bangkok, Thailand, in 2006, the M.Eng. degree in information management from Asian Institute of Technology, Pathum Thani, Thailand, in 2012, and the Ph.D. degree in informatics from SOKENDAI, Kanagawa, Japan, in 2016. From 2006 to 2010, he was a Software Engineer with Thomson Reuters, Thailand. From 2012 to 2013, he was a Senior Software Engineer with Punsarn Asia, Thailand. From 2013 to 2016, he was a Research Assistant with the National Institute of Informatics, Japan. He is currently an Associate Professor with the Department of Computer Engineering, School of Engineering, King Mongkut’s Institute of Technology Ladkrabang.
 
 ---
 
