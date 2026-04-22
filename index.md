@@ -1,6 +1,6 @@
 | 𑁔 | [About Me](index.md) | [Publications](publications.md) |
-|---|---|---|
-
+|--|--|--|
+---
 # RATHACHAI CHAWUTHAI
 
 > 「 サービスとしての知識 」— *Knowledge as a Service*
