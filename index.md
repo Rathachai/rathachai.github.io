@@ -63,10 +63,10 @@ Rathachai Chawuthai received the B.Eng. degree in computer engineering from the 
 
 | | |
 |---|---|
-| **Personal Email** | [rathachai.c@gmail.com](mailto:rathachai.c@gmail.com) |
-| **Academic Email** | [rathachai.ch@kmitl.ac.th](mailto:rathachai.ch@kmitl.ac.th) |
-| **LinkedIn** | [linkedin.com/in/rathachai](https://www.linkedin.com/in/rathachai/) |
-| **Website** | [rathachai.creatier.pro](https://rathachai.creatier.pro/) |
+| Personal Email | [rathachai.c@gmail.com](mailto:rathachai.c@gmail.com) |
+| Academic Email | [rathachai.ch@kmitl.ac.th](mailto:rathachai.ch@kmitl.ac.th) |
+| LinkedIn | [linkedin.com/in/rathachai](https://www.linkedin.com/in/rathachai/) |
+| Website | [rathachai.creatier.pro](https://rathachai.creatier.pro/) |
 
 ---
 
@@ -77,7 +77,7 @@ Rathachai Chawuthai received the B.Eng. degree in computer engineering from the 
 > ECC Building, 9th Floor, No. 1, Chalongkrung Rd., Ladkrabang  
 > Bangkok 10520, **THAILAND**
 > 
-> [Google Map](https://maps.app.goo.gl/QKJB9xCgJT6TGjzw8)
+> [Map](https://maps.app.goo.gl/QKJB9xCgJT6TGjzw8)
 
 ---
 
@@ -88,11 +88,11 @@ Rathachai Chawuthai received the B.Eng. degree in computer engineering from the 
 
 | Platform | Profile |
 |----------|---------|
-| ORCID | https://orcid.org/0000-0002-9303-4810 |
-| Scopus | https://www.scopus.com/authid/detail.uri?authorId=55479962500 |
-| DBLP | https://dblp.org/pid/120/7154.html |
-| Google Scholar | https://scholar.google.com/citations?user=MJ-lOKMAAAAJ |
-| ResearchGate | https://www.researchgate.net/profile/Rathachai-Chawuthai |
+| ORCID | [https://orcid.org/0000-0002-9303-4810](https://orcid.org/0000-0002-9303-4810) |
+| Scopus | [https://www.scopus.com/authid/detail.uri?authorId=55479962500](https://www.scopus.com/authid/detail.uri?authorId=55479962500) |
+| DBLP | [https://dblp.org/pid/120/7154.html](https://dblp.org/pid/120/7154.html) |
+| Google Scholar | [https://scholar.google.com/citations?user=MJ-lOKMAAAAJ](https://scholar.google.com/citations?user=MJ-lOKMAAAAJ) |
+| ResearchGate | [https://www.researchgate.net/profile/Rathachai-Chawuthai](https://www.researchgate.net/profile/Rathachai-Chawuthai) |
 
 ---
 
