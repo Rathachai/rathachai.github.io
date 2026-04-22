@@ -11,7 +11,7 @@
 |--|--|--|
 ---
 
-## Short Intr
+## Short Introduction
 
 Associate Professor at the Department of Computer Engineering, King Mongkut's Institute of Technology Ladkrabang (KMITL), Bangkok, Thailand. Research focuses on data analytics, semantic web, linked open data, and the intersection of knowledge management with modern web technologies.
 
