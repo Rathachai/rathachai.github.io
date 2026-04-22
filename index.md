@@ -1,15 +1,16 @@
+
 | 𑁔 | [About Me](index.md) | [Publications](publications.md) |
 |--|--|--|
----
-# RATHACHAI CHAWUTHAI
+
+### チャウウタイ  ラッタチャイ 
 
 > 「 サービスとしての知識 」— *Knowledge as a Service*
 
-**Associate Professor · Computer Engineering · KMITL, Bangkok**
+![Associate, Professor](https://img.shields.io/badge/Associate-Professor-green)
+![Computer, Engineering](https://img.shields.io/badge/KMITL-Computer_Engineering-orange)
+![LAB, SAIG](https://img.shields.io/badge/LAB-SAIG-blue)
+![Bangkok, Thailand](https://img.shields.io/badge/Bangkok-Thailand-red)
 
-![Bangkok, Thailand](https://img.shields.io/badge/Bangkok-Thailand-c94a2a?style=flat-square)
-![Version](https://img.shields.io/badge/README-v2025-1a1714?style=flat-square)
-![Status](https://img.shields.io/badge/Open%20to-Collaboration-4a7c59?style=flat-square)
 
 ---
 
