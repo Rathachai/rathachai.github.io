@@ -1,7 +1,5 @@
-| 𑁔 | [About Me](index.md) | [Publications](publications.md) |
-|---|---|---|
 
-# Publications — Rathachai Chawuthai
+# Publications
 
 > 「 サービスとしての知識 」— *Knowledge as a Service*
 
@@ -148,7 +146,3 @@
 ## Patents
 
 - Suksomboon, K., Fukushima, M., Hayashi, M., Takeda, H., Chawuthai, R. "ネットワーク設計装置及びプログラム (Network Design Tools and Programs)". [特願2014-253396](https://ipforce.jp/patent-jp-A-2016-116087). (2015)
-
----
-
-[About Me](https://rathachai.creatier.pro/about-me) · [Teaching](https://rathachai.creatier.pro/teaching) · [LinkedIn ↗](https://www.linkedin.com/in/rathachai/)
