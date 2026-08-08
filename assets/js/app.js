@@ -14,10 +14,40 @@
   var heroTitle = document.getElementById('hero-title');
   var heroSub = document.getElementById('hero-sub');
   var navBar = document.querySelector('.nav-bar');
+  var heroBg = document.getElementById('hero-bg');
+  var footerBg = document.getElementById('footer-bg');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // The pinned nav is transparent over the banner and solid once scrolled.
   function syncNavBar() {
     navBar.classList.toggle('nav-solid', window.scrollY > 24);
+  }
+
+  /* Shift each banner layer against the scroll direction. The layer is inset
+     18% top and bottom, so a small factor never uncovers an edge. */
+  var SHIFT = 0.08;
+
+  function parallax(box, layer) {
+    if (!box || !layer) return;
+    var rect = box.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return; // off-screen
+    var fromCentre = rect.top + rect.height / 2 - window.innerHeight / 2;
+    layer.style.transform = 'translate3d(0,' + (-fromCentre * SHIFT).toFixed(1) + 'px,0)';
+  }
+
+  function syncParallax() {
+    if (reduceMotion.matches) return;
+    parallax(hero, heroBg);
+    parallax(document.querySelector('.site-footer'), footerBg);
+  }
+
+  /* Done straight from the scroll handler rather than behind a
+     requestAnimationFrame latch: a latch that never gets its callback (a
+     background or hidden tab) stays stuck and parallax dies for good. The work
+     here is two rects and two transform writes, which is cheap enough. */
+  function onScroll() {
+    syncNavBar();
+    syncParallax();
   }
 
   // Path relative to <base href>, so routing works under a project subpath too.
@@ -83,10 +113,10 @@
 
     if (location.hash.length > 1) {
       var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-      if (target) { target.scrollIntoView(); syncNavBar(); return; }
+      if (target) { target.scrollIntoView(); onScroll(); return; }
     }
     window.scrollTo(0, 0);
-    syncNavBar();
+    onScroll();
   }
 
   function load() {
@@ -132,7 +162,8 @@
   });
 
   window.addEventListener('popstate', load);
-  window.addEventListener('scroll', syncNavBar, { passive: true });
-  syncNavBar();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
   load();
 })();

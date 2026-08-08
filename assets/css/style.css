@@ -143,18 +143,34 @@ img { max-width: 100%; height: auto; }
 /* ---- Banner ---- */
 
 .hero {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 260px;
   padding: 92px 0 40px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), var(--banner);
-  background-size: cover;
-  background-position: center 35%;
-  background-attachment: fixed;   /* parallax: image stays put while the page scrolls */
   text-align: center;
   color: #fff;
 }
+
+/* The image lives in its own layer, inset beyond the box so it can be shifted
+   for parallax without ever exposing an edge. Because the layer is sized to
+   the banner box (not the viewport), `center` really is the middle of the
+   image — which is the bright part; the top of the photo is nearly black. */
+.hero-bg, .footer-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18%;
+  bottom: -18%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.42)), var(--banner);
+  background-size: cover;
+  background-position: center center;
+  will-change: transform;
+}
+
+.hero > .wrap { position: relative; z-index: 1; }
 
 .hero-tall { min-height: 440px; }
 
@@ -305,17 +321,25 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
 
 /* The banner is the footer itself — the text sits on the image. */
 .site-footer {
+  position: relative;
+  overflow: hidden;
   margin-top: 40px;
-  min-height: 150px;
+  min-height: 75px;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)), var(--banner);
-  background-size: cover;
-  background-position: center 60%;
-  background-attachment: fixed;
 }
 
-.site-footer .wrap { padding-top: 26px; padding-bottom: 26px; width: 100%; }
+.footer-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.56)), var(--banner);
+}
+
+.site-footer .wrap {
+  position: relative;
+  z-index: 1;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  width: 100%;
+}
 
 .site-footer p {
   margin: 0;
@@ -327,10 +351,10 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #fff; }
 
-/* iOS Safari renders `background-attachment: fixed` zoomed and jittery, so
-   turn the parallax off on touch devices and whenever motion is unwelcome. */
-@media (hover: none), (prefers-reduced-motion: reduce) {
-  .hero, .site-footer { background-attachment: scroll; }
+/* Transform-based parallax works fine on touch, unlike background-attachment,
+   but it is still motion — so honour the user's preference. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg, .footer-bg { transform: none !important; }
 }
 
 /* ============================ Small screens ============================ */
