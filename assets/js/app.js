@@ -161,6 +161,30 @@
     }
   });
 
+  /* ---- Small-screen drawer ---- */
+
+  var navToggle = document.getElementById('nav-toggle');
+  var navClose = document.getElementById('nav-close');
+  var navBackdrop = document.getElementById('nav-backdrop');
+
+  function setDrawer(open) {
+    document.body.classList.toggle('nav-open', open);
+    if (navToggle) navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  if (navToggle) navToggle.addEventListener('click', function () { setDrawer(true); });
+  if (navClose) navClose.addEventListener('click', function () { setDrawer(false); });
+  if (navBackdrop) navBackdrop.addEventListener('click', function () { setDrawer(false); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setDrawer(false);
+  });
+
+  // Any nav link closes the drawer, including one for the page already shown.
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setDrawer(false);
+  });
+
   window.addEventListener('popstate', load);
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });

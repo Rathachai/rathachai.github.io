@@ -1,12 +1,9 @@
 ---
 hero: Web Development
-sub: CE WebDev Academy
 title: Web Development
 ---
 
 # CE WebDev Academy
-
-> A zero-setup, in-browser playground for learning HTML, CSS, and JavaScript with instant code execution.
 
 CE WebDev Academy is a zero-setup, in-browser playground for learning HTML, CSS, and JavaScript with instant code execution. Simply select a lesson from the tree on the left, edit the code in the interactive Display panel below, and click Render to see your changes immediately.
 

@@ -8,7 +8,7 @@
 <base href="/">
 <title>Rathachai Chawuthai</title>
 <meta name="description" content="Rathachai Chawuthai — Associate Professor, Department of Computer Engineering, King Mongkut's Institute of Technology Ladkrabang (KMITL).">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -17,11 +17,16 @@
   <div class="nav-bar">
     <div class="wrap">
       <a class="site-title" href="/">Rathachai Chawuthai</a>
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="site-nav" id="nav">
+        <button class="nav-close" id="nav-close" type="button" aria-label="Close menu">✕</button>
         <a href="/">About Me</a>
         <a href="/publications">Publications</a>
         <div class="dropdown">
-          <a href="/teaching">Teaching <span aria-hidden="true">▾</span></a>
+          <a href="/teaching">Teaching <span class="caret" aria-hidden="true">▾</span></a>
           <div class="dropdown-menu">
             <a href="/data-analytics">Data Analytics</a>
             <a href="/semantic-web">Semantic Technology</a>
@@ -31,6 +36,7 @@
         </div>
       </nav>
     </div>
+    <div class="nav-backdrop" id="nav-backdrop"></div>
   </div>
   <div class="hero" id="hero">
     <div class="hero-bg" id="hero-bg" role="presentation"></div>

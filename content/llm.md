@@ -1,12 +1,13 @@
 ---
 hero: LLM Learning Hub
-sub: Interactive Visualizations for Machine Learning, Deep Learning & Language Models
 title: LLM Learning Hub
 ---
 
 # LLM Learning Hub
 
-> Turning complex AI architectures into real-time, interactive, click-and-play experiences.
+Interactive Visualizations for Machine Learning, Deep Learning & Language Models
+
+Turning complex AI architectures into real-time, interactive, click-and-play experiences.
 
 [https://llm-ce-kmitl.github.io/learning/](https://llm-ce-kmitl.github.io/learning/)
 

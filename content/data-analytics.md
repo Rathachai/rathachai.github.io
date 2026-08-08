@@ -1,10 +1,11 @@
 ---
 hero: Data Analytics
-sub: Wake your data up. They'll work for you.
 title: Data Analytics
 ---
 
 # Data Analytics
+
+Wake your data up. They'll work for you.
 
 ## Introduction to Pandas
 
