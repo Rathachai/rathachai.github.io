@@ -29,6 +29,14 @@ title: Teaching
 - For all first-year students of Engineering Program, KMITL
 - [Lab Instruction](https://docs.google.com/presentation/d/1FOiz6VlBYvAryKVuQ-nlrHD8FcrhsrkrqzJVGOZBM4E)
 
+### Web Development
+
+CE WebDev Academy is a zero-setup, in-browser playground for learning HTML, CSS, and JavaScript with instant code execution. Simply select a lesson from the tree on the left, edit the code in the interactive Display panel below, and click Render to see your changes immediately.
+
+[https://cei-www.github.io/academy/](https://cei-www.github.io/academy/)
+
+![CE WebDev Academy](images/web-app.jpg)
+
 ---
 
 ## Training
