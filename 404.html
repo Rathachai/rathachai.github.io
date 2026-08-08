@@ -79,7 +79,12 @@
 <header class="site-header">
   <div class="nav-bar">
     <div class="wrap">
-      <a class="site-title" href="/">Rathachai Chawuthai</a>
+      <a class="site-title" href="/">
+        <!-- Decorative: the link already carries the full name as text, so the
+             mark is hidden from assistive tech rather than read out twice. -->
+        <img class="site-logo" src="assets/logo.svg" alt="" aria-hidden="true" width="52" height="28">
+        <span>Rathachai Chawuthai</span>
+      </a>
       <button class="nav-toggle" id="nav-toggle" type="button"
               aria-label="Open menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>

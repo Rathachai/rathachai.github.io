@@ -1,9 +1,19 @@
+<!-- Browser-tab icon. Keeps its dark plate (unlike assets/logo.svg) because it
+     has to hold up against whatever background the browser chrome gives it.
+     The braces are stroked paths, not glyphs: a typed { } eats about as much
+     width as a letter, which forced RC to shrink. As paths they stay tall and
+     narrow, leaving RC room to be read at 16px. The stroke is deliberately
+     heavier than the nav logo's for the same reason. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RC">
   <rect width="64" height="64" rx="10" fill="#000000"/>
+  <g fill="none" stroke="#ffd21e" stroke-width="3.2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 12 C13 12 13 17 13 22 C13 28 10 30.8 7 32 C10 33.2 13 36 13 42 C13 47 13 52 19 52"/>
+    <path d="M45 12 C51 12 51 17 51 22 C51 28 54 30.8 57 32 C54 33.2 51 36 51 42 C51 47 51 52 45 52"/>
+  </g>
   <text x="32" y="42"
         text-anchor="middle"
         font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
-        font-size="24" font-weight="700" letter-spacing="-0.5">
-    <tspan fill="#ffd21e">{</tspan><tspan fill="#ffffff">RC</tspan><tspan fill="#ffd21e">}</tspan>
-  </text>
+        font-size="28" font-weight="700" letter-spacing="-1.5"
+        fill="#ffffff">RC</text>
 </svg>

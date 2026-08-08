@@ -89,6 +89,9 @@ img { max-width: 100%; height: auto; }
 
 /* The bar is transparent over the banner, so nav text needs its own shadow. */
 .site-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   color: #fff;
   font-size: 1.05rem;
   font-weight: 500;
@@ -96,6 +99,15 @@ img { max-width: 100%; height: auto; }
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 1px 12px rgba(0, 0, 0, 0.6);
 }
 .site-title:hover { color: #fff; text-decoration: none; }
+
+/* The mark has no plate of its own, so it gets the same shadow treatment as
+   the text to stay readable over the brighter parts of the banner. */
+.site-logo {
+  height: 22px;
+  width: auto;
+  flex: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.85));
+}
 
 .site-nav {
   display: flex;

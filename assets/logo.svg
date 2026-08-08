@@ -1,0 +1,18 @@
+<!-- Nav-bar mark. Unlike assets/favicon.svg this has no background plate: it
+     sits on the banner and on the dark scrolled bar, both of which we control,
+     so a plate would only show as a dark blob against them.
+     The braces are drawn as stroked paths rather than typed characters, so
+     their weight is fixed and hairline-thin instead of depending on whichever
+     monospace face the viewer happens to have. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 28" role="img" aria-label="{RC}">
+  <g fill="none" stroke="#ffd21e" stroke-width="1.15"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4 C9 4 9 6.5 9 9 C9 12 7.5 13.4 6 14 C7.5 14.6 9 16 9 19 C9 21.5 9 24 12 24"/>
+    <path d="M40 4 C43 4 43 6.5 43 9 C43 12 44.5 13.4 46 14 C44.5 14.6 43 16 43 19 C43 21.5 43 24 40 24"/>
+  </g>
+  <text x="26" y="19.5"
+        text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace"
+        font-size="15" font-weight="700" letter-spacing="-0.3"
+        fill="#ffffff">RC</text>
+</svg>
