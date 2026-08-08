@@ -301,6 +301,7 @@ body.nav-open .nav-backdrop {
 
 .intro-photo { width: 100%; border-radius: 4px; }
 .intro-text h1 { margin-top: 0; }
+.intro-alt { margin: 0 0 0.6rem; color: var(--muted); font-size: 1rem; }
 .intro-role { margin: 0.1rem 0; font-size: 1.05rem; }
 .intro-mail { margin-top: 1rem; font-size: 0.95rem; }
 

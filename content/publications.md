@@ -53,7 +53,15 @@ title: Publications
 
 ## Conference Papers
 
+### 2026
+
+- Racharak, T., Mon, S. Y., & Chawuthai, R. (2026). [Answer Set Programming for Bus Route Finding: A Case Study in Bangkok, Thailand](https://doi.org/10.1109/JCSSE68839.2026.11597031). *JCSSE 2026* (pp. 415–420). IEEE.
+
 ### 2025
+
+- Pathak, A., Sharma, D. K., Agrawal, H., Chawuthai, R., & Petchhan, J. (2025). [Detecting AI-Generated Scientific Abstracts Using Galactica and Graph Neural Networks](https://doi.org/10.1109/ISCON65210.2025.11341445). *ISCON 2025* (pp. 1–7). IEEE.
+
+- Pathak, A., Sharma, D. K., Agrawal, H., Chawuthai, R., & Petchhan, J. (2025). [Modular LLM Architecture with Pluggable Reasoning Heads: A Scalable Approach to Multi-Modal AI Reasoning](https://doi.org/10.1109/ETNCC66224.2025.11299615). *ETNCC 2025* (pp. 1–7). IEEE.
 
 - Chawuthai, R., et al. (2025). [Assessing the Effects of Corrupted Parameters in a Large Language Model: A Case Study of LLAMA 3.2 1B](https://doi.org/10.1145/3775030.3775040). *ASSE 2025* (pp. 64–69). ACM.
 

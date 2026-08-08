@@ -9,6 +9,7 @@ title: Rathachai Chawuthai
 <img class="intro-photo" src="images/rc-001.png" alt="Rathachai Chawuthai">
 <div class="intro-text">
 <h1>RATHACHAI CHAWUTHAI</h1>
+<p class="intro-alt" lang="th">รัฐชัย ชาวอุทัย <span lang="ja">· チャウウタイ ラッタチャイ</span></p>
 <p class="intro-role">Associate Professor at the Department of Computer Engineering</p>
 <p class="intro-role">King Mongkut's Institute of Technology Ladkrabang (KMITL), Bangkok, Thailand</p>
 <p class="intro-mail"><a href="mailto:rathachai.c@gmail.com">rathachai.c@gmail.com</a> , <a href="mailto:rathachai.ch@kmitl.ac.th">rathachai.ch@kmitl.ac.th</a></p>
