@@ -1,6 +1,9 @@
-# Teaching
-
 ---
+hero: Teaching
+title: Teaching
+---
+
+# Teaching
 
 ## Lecture Courses at KMITL
 
@@ -69,6 +72,3 @@
 
 - [YouTube playlist](https://www.youtube.com/playlist?list=PLjHjUiiBV-LIo6_BMWzHdSlhdPpRp9QrK)
 
----
-
-see also >> [linked-in](https://www.linkedin.com/in/rathachai/)

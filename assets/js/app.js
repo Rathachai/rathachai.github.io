@@ -6,9 +6,13 @@
 
   var HOME = 'home';
   var VALID_SLUG = /^[a-z0-9][a-z0-9-]*$/i;
+  var SITE = 'Rathachai Chawuthai';
 
   var content = document.getElementById('content');
   var nav = document.getElementById('nav');
+  var hero = document.getElementById('hero');
+  var heroTitle = document.getElementById('hero-title');
+  var heroSub = document.getElementById('hero-sub');
 
   // Path relative to <base href>, so routing works under a project subpath too.
   function basePath() {
@@ -25,13 +29,34 @@
     return path || HOME;
   }
 
+  /* Optional leading block of "key: value" lines delimited by --- lines.
+     Everything after it is Markdown. */
+  function splitFrontMatter(text) {
+    var m = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(text);
+    if (!m) return { meta: {}, body: text };
+
+    var meta = {};
+    m[1].split(/\r?\n/).forEach(function (line) {
+      var kv = /^([A-Za-z][\w-]*)\s*:\s*(.*)$/.exec(line);
+      if (kv) meta[kv[1]] = kv[2].trim();
+    });
+    return { meta: meta, body: text.slice(m[0].length) };
+  }
+
+  function setHero(meta) {
+    heroTitle.textContent = meta.hero || '';
+    heroSub.textContent = meta.sub || '';
+    heroSub.hidden = !meta.sub;
+    hero.classList.toggle('hero-tall', meta.tall === 'true');
+  }
+
   function notFound(slug) {
+    setHero({ hero: 'Page not found' });
     content.innerHTML =
-      '<h1>Page not found</h1>' +
       '<p>There is no page at <code></code>.</p>' +
       '<p><a href="' + basePath() + '">← Back to home</a></p>';
     content.querySelector('code').textContent = '/' + slug;
-    document.title = 'Page not found — Rathachai Chawuthai';
+    document.title = 'Page not found — ' + SITE;
   }
 
   function setActiveNav(slug) {
@@ -45,11 +70,10 @@
     }
   }
 
-  function afterRender() {
+  function afterRender(meta) {
     var h1 = content.querySelector('h1');
-    document.title = h1 && h1.textContent.trim()
-      ? h1.textContent.trim() + ' — Rathachai Chawuthai'
-      : 'Rathachai Chawuthai';
+    var name = (meta.title || (h1 && h1.textContent) || '').trim();
+    document.title = name && name !== SITE ? name + ' — ' + SITE : SITE;
 
     if (location.hash.length > 1) {
       var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
@@ -69,9 +93,11 @@
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return res.text();
       })
-      .then(function (md) {
-        content.innerHTML = window.renderMarkdown(md);
-        afterRender();
+      .then(function (text) {
+        var doc = splitFrontMatter(text);
+        setHero(doc.meta);
+        content.innerHTML = window.renderMarkdown(doc.body);
+        afterRender(doc.meta);
       })
       .catch(function () { notFound(slug); });
   }

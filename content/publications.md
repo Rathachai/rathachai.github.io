@@ -1,9 +1,9 @@
+---
+hero: Publications
+title: Publications
+---
 
 # Publications
-
-> 「 サービスとしての知識 」— *Knowledge as a Service*
-
----
 
 ## Researcher Links
 
@@ -18,6 +18,8 @@
 ---
 
 ## Journal Articles
+
+- Chawuthai, R., Sermswan, A., Boonnithititikul, et al. (2026). [Utilizing deep learning from mobile phone photos for early detection of horizontal strabismus: a screening approach](https://doi.org/10.1038/s41598-026-48893-6). *Scientific Reports*.
 
 - Chawuthai, R., Murathathunyaluk, S., et al. (2026). [A machine learning approach for predicting osmotic coefficients and deriving activity coefficients in alkyl ammonium salts](https://www.nature.com/articles/s41598-026-36758-x). *Scientific Reports*.
 

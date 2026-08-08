@@ -45,7 +45,21 @@ cp index.html 404.html
 2. If it should appear in the menu, add a link in `index.html` (then re-copy
    to `404.html`).
 
-The first `# Heading` in the file becomes the browser tab title.
+## Page front matter
+
+A content file may start with an optional block of `key: value` lines between
+`---` delimiters. It controls the banner at the top of the page:
+
+```
+---
+hero: Data Analytics                          # large text over the banner
+sub: Wake your data up. They'll work for you. # smaller line beneath it
+tall: true                                    # taller banner (home page)
+title: Data Analytics                         # browser tab title
+---
+```
+
+Every key is optional. Without `title`, the page's first `# Heading` is used.
 
 ## Supported Markdown
 
@@ -53,6 +67,27 @@ Headings, horizontal rules, tables, blockquotes, ordered/unordered lists,
 fenced code, inline code, bold, italic, links, images, bare URLs (auto-linked),
 and raw HTML blocks. A single newline inside a paragraph renders as a line
 break, which is what keeps the office address on separate lines.
+
+A raw HTML block runs until the next blank line, so **do not leave blank lines
+inside one**. That is how the home page builds its photo-beside-name intro and
+its address-beside-map layout.
+
+### Embedding video and slides
+
+Wrap the iframe in `.embed` (16:9, for YouTube) or `.embed embed-slides`
+(taller, for SlideShare) so it scales with the page:
+
+```html
+<div class="embed">
+<iframe src="https://www.youtube.com/embed/VIDEO_ID" title="..." allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+## Images
+
+`images/banner.jpg` is the single starry-sky banner used by both the page
+header and the footer strip, matching the original site. Replace that one file
+to restyle every page at once.
 
 ## Local preview
 
