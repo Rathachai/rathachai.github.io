@@ -424,8 +424,31 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 1px 12px rgba(0, 0, 0, 0.75);
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
 .site-footer a { color: #fff; }
 .site-footer a:hover { color: #fff; }
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.icon-link:hover { opacity: 1; transform: translateY(-1px); }
+
+.icon-link svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;   /* inherits the footer's white */
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.8));
+}
 
 /* Transform-based parallax works fine on touch, unlike background-attachment,
    but it is still motion — so honour the user's preference. */
