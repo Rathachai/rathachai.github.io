@@ -13,6 +13,12 @@
   var hero = document.getElementById('hero');
   var heroTitle = document.getElementById('hero-title');
   var heroSub = document.getElementById('hero-sub');
+  var navBar = document.querySelector('.nav-bar');
+
+  // The pinned nav is transparent over the banner and solid once scrolled.
+  function syncNavBar() {
+    navBar.classList.toggle('nav-solid', window.scrollY > 24);
+  }
 
   // Path relative to <base href>, so routing works under a project subpath too.
   function basePath() {
@@ -77,9 +83,10 @@
 
     if (location.hash.length > 1) {
       var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-      if (target) { target.scrollIntoView(); return; }
+      if (target) { target.scrollIntoView(); syncNavBar(); return; }
     }
     window.scrollTo(0, 0);
+    syncNavBar();
   }
 
   function load() {
@@ -125,5 +132,7 @@
   });
 
   window.addEventListener('popstate', load);
+  window.addEventListener('scroll', syncNavBar, { passive: true });
+  syncNavBar();
   load();
 })();
