@@ -54,8 +54,10 @@ img { max-width: 100%; height: auto; }
 
 .site-header { position: relative; }
 
-/* Nav stays pinned to the top. Over the banner it is transparent; once the
-   page scrolls it takes a solid background so the white text stays readable. */
+/* Nav stays pinned to the top on a near-black bar (85%, so a hint of the
+   banner shows through). The banner has no darkening mask any more, so a
+   mostly-transparent bar would not hold white text over the bright part of
+   the photo. The bar only shrinks once the page scrolls. */
 .nav-bar {
   position: fixed;
   top: 0;
@@ -63,17 +65,17 @@ img { max-width: 100%; height: auto; }
   right: 0;
   z-index: 20;
   padding: 16px 0;
-  transition: background-color 0.25s ease, padding 0.25s ease, box-shadow 0.25s ease;
-}
-
-.nav-bar.nav-solid {
-  background: rgba(16, 20, 26, 0.92);
-  padding: 9px 0;
-  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.85);
+  transition: padding 0.25s ease, box-shadow 0.25s ease;
 }
 
 @supports (backdrop-filter: blur(8px)) {
-  .nav-bar.nav-solid { background: rgba(16, 20, 26, 0.72); backdrop-filter: blur(10px); }
+  .nav-bar { backdrop-filter: blur(6px); }
+}
+
+.nav-bar.nav-solid {
+  padding: 9px 0;
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
 }
 
 .nav-bar .wrap {
@@ -90,7 +92,6 @@ img { max-width: 100%; height: auto; }
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 .site-title:hover { color: #fff; text-decoration: none; }
 
@@ -104,7 +105,6 @@ img { max-width: 100%; height: auto; }
 .site-nav a {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.95rem;
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 .site-nav a:hover { color: #fff; text-decoration: none; }
 .site-nav a.active { color: #fff; font-weight: 600; }
@@ -164,7 +164,9 @@ img { max-width: 100%; height: auto; }
   right: 0;
   top: -18%;
   bottom: -18%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.42)), var(--banner);
+  /* No darkening mask — the photo is a night sky and already dark enough.
+     White text stays legible via text-shadow instead. */
+  background-image: var(--banner);
   background-size: cover;
   background-position: center center;
   will-change: transform;
@@ -179,15 +181,15 @@ img { max-width: 100%; height: auto; }
   font-size: clamp(1.6rem, 3.4vw, 2.5rem);
   font-weight: 400;
   letter-spacing: 0.06em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 18px rgba(0, 0, 0, 0.75);
 }
 
 .hero-sub {
   margin: 14px 0 0;
   font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.88);
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 2px 14px rgba(0, 0, 0, 0.75);
 }
 
 /* ============================ Content ============================ */
@@ -329,10 +331,6 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
   align-items: center;
 }
 
-.footer-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.56)), var(--banner);
-}
-
 .site-footer .wrap {
   position: relative;
   z-index: 1;
@@ -343,9 +341,9 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
 
 .site-footer p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   font-size: 0.9rem;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 1px 12px rgba(0, 0, 0, 0.75);
 }
 
 .site-footer a { color: #fff; }
@@ -368,7 +366,7 @@ pre code { background: none; border: none; padding: 0; white-space: pre; }
 @media (max-width: 640px) {
   /* Always solid on small screens — the two-row bar would otherwise sit on
      top of the content once the banner scrolls away. */
-  .nav-bar, .nav-bar.nav-solid { padding: 10px 0; background: rgba(16, 20, 26, 0.94); }
+  .nav-bar, .nav-bar.nav-solid { padding: 10px 0; }
   .nav-bar .wrap { flex-direction: column; align-items: flex-start; }
   .hero { padding: 112px 0 32px; min-height: 0; }
   .hero-tall { min-height: 220px; }
