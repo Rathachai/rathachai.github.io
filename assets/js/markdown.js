@@ -45,16 +45,18 @@
       return keep('<img src="' + escapeHtml(safeUrl(src)) + '" alt="' + escapeHtml(alt) + '">');
     });
 
-    // Links: [text](url)
+    // Links: [text](url). Ones whose label is just the URL are marked so the
+    // print stylesheet does not append the address to itself.
     text = text.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, label, url) {
       var href = safeUrl(url);
       var ext = /^https?:/i.test(href) ? ' target="_blank" rel="noopener"' : '';
-      return keep('<a href="' + escapeHtml(href) + '"' + ext + '>' + inline(label) + '</a>');
+      var bare = label.trim() === url.trim() ? ' class="bare-url"' : '';
+      return keep('<a href="' + escapeHtml(href) + '"' + bare + ext + '>' + inline(label) + '</a>');
     });
 
     // Bare URLs
     text = text.replace(/(^|[\s(])(https?:\/\/[^\s<)]+)/g, function (_, pre, url) {
-      return pre + keep('<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener">' + escapeHtml(url) + '</a>');
+      return pre + keep('<a href="' + escapeHtml(url) + '" class="bare-url" target="_blank" rel="noopener">' + escapeHtml(url) + '</a>');
     });
 
     text = escapeHtml(text);

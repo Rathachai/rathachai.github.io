@@ -1,0 +1,166 @@
+/* Print stylesheet.
+   The screen design leans on things paper can't do — a fixed dark nav, a
+   parallax night-sky banner, a slide-in drawer, embedded video — so this
+   isn't a tweak of style.css, it rebuilds the page as a plain document:
+   masthead, title, body text, and a footer with real URLs instead of icons. */
+
+@media print {
+
+  /* ---- Strip the chrome ---- */
+
+  .nav-bar,
+  .site-footer,
+  .dropdown-menu,
+  .embed,             /* YouTube / SlideShare iframes: dead weight on paper */
+  .office-map iframe, /* the Google Maps embed itself — its "Open in Maps" link survives */
+  noscript { display: none !important; }
+
+  /* Kill the parallax layers and any leftover transform so nothing prints
+     cropped or offset — the layers are inset -18%/-18% on screen. */
+  .hero-bg, .footer-bg { display: none !important; }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* ---- Page ---- */
+
+  @page {
+    margin: 2cm 1.6cm;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .wrap { max-width: none; padding: 0; }
+
+  /* ---- Masthead: name + page title, standing in for the banner ---- */
+
+  .hero {
+    position: static;
+    display: block;
+    min-height: 0;
+    padding: 0 0 10pt;
+    margin-bottom: 16pt;
+    border-bottom: 1.5pt solid #000;
+    color: #000;
+    text-align: left;
+  }
+
+  .hero::before {
+    content: "Rathachai Chawuthai";
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 4pt;
+  }
+
+  .hero-title {
+    font-size: 20pt;
+    font-weight: 700;
+    letter-spacing: normal;
+  }
+
+  .hero-sub {
+    margin-top: 4pt;
+    font-size: 11pt;
+    letter-spacing: normal;
+    color: #333 !important;
+  }
+
+  /* ---- Content ---- */
+
+  .content { padding: 0; }
+
+  .content h1 {
+    font-size: 17pt;
+    color: #000 !important;
+    margin: 0 0 10pt;
+  }
+
+  .content h2 {
+    font-size: 13pt;
+    margin: 16pt 0 8pt;
+    padding: 0 0 3pt;
+    background: none !important;
+    border-left: none;
+    border-bottom: 1pt solid #000;
+  }
+
+  .content h3 { font-size: 11.5pt; margin: 12pt 0 4pt; }
+  .content h4 { font-size: 11pt; margin: 10pt 0 3pt; color: #333 !important; }
+
+  p, li { orphans: 3; widows: 3; }
+  h1, h2, h3, h4 { break-after: avoid; }
+  table, blockquote, pre, img { break-inside: avoid; }
+
+  a { color: #000 !important; text-decoration: underline; }
+
+  /* Print the destination after each link, since a click obviously does
+     nothing on paper — except when the link text already is the URL, or
+     is an in-page anchor, which would just repeat it. */
+  a[href^="http"]:not(.bare-url)::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #444;
+    word-break: break-all;
+  }
+  a[href^="#"]::after { content: ""; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  th, td {
+    padding: 4pt 8pt 4pt 0;
+    border-bottom: 0.75pt solid #999;
+  }
+  th { color: #000 !important; }
+
+  blockquote {
+    background: none !important;
+    border-left: 2pt solid #000;
+    color: #333 !important;
+    padding: 2pt 10pt;
+  }
+
+  code, pre {
+    background: #f2f2f2 !important;
+    border: 0.5pt solid #ccc;
+    color: #000 !important;
+  }
+
+  /* No !important here: .intro-photo below needs to override this with a
+     tighter cap, and !important would beat it regardless of specificity. */
+  img { max-width: 100%; }
+
+  /* ---- Home page: recompose the two-column blocks into one column ---- */
+
+  .intro, .office {
+    display: block;
+  }
+  .intro-photo { max-width: 3.2cm; margin-bottom: 8pt; }
+  .intro-alt { color: #333 !important; }
+
+  /* Only the iframe is hidden above — .map-link (the "Open in Google Maps"
+     line already in the markup) prints as a plain underlined URL. */
+  .office-map { margin-top: 4pt; }
+
+  /* ---- Nav-adjacent bits that have no place on paper ---- */
+
+  .badges { display: none; }
+}
